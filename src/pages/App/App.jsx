@@ -17,7 +17,7 @@ export default function App() {
         <Navbar user={ user } setUser={setUser} />
       <Routes>
         <Route path="/team" element={<TeamPage prop="prop"/>}/>
-        <Route path="/media" element={<MediaPage token={process.env.INSTA_TOKEN} limit={12} />} />
+        <Route path="/media" element={<MediaPage token={'IGQVJVSVBFMjB1VWw4T1pEd3ZAhQXRCMTFBQ3JKYWQ5czN0aEl0M2ViQ004emVrN2lscjRyX1FLTjdKWXRMSUFfMWJPSVg4LXpKVHN2b2JLeTRBMmh6eTFXTUh0Y1hNN0FUX1lZATVI1czV4ZA1J5a21QSQZDZD'} limit={12} />} />
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/add-rider" element={<AuthPage />} />
         <Route path="/reports" element={<ReportPage />} />
