@@ -38,9 +38,12 @@ export default function Navbar({ user, setUser }) {
             { isAdmin ?
             <Link to="/add-user">Add user</Link>
             :
-            <Link to="sign-in">Sign in</Link>
+             user ?
+                <Link to="" onClick={handleLogOut}>Log Out</Link>
+                :
+                <Link to="sign-in">Sign in</Link>
             }
-            {/* <Link to="" onClick={handleLogOut}>Log Out</Link> */}
+        
         </nav>
     )
 }

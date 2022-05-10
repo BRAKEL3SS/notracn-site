@@ -27,7 +27,7 @@ export default function MediaPage({token, ...props}) {
         
         // manually call the fecth function 
         fetchInstagramPost();
-        console.log(props.token)
+        console.log(token)
         
   
         return () => {
