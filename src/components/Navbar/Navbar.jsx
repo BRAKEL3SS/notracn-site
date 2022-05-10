@@ -27,7 +27,7 @@ export default function Navbar({ user, setUser }) {
         <nav>
             <span>Welcome </span>
             &nbsp; | &nbsp;
-            <Link to="/team">Team Riders | </Link>
+            <Link to="/team">Team Riders </Link>
             &nbsp; | &nbsp;
             <Link to="/media">Social Media</Link>
             &nbsp; | &nbsp;

@@ -1,9 +1,10 @@
-import { checkToken } from "../../utilities/users-service"
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import Feed from '../../components/Feed/Feed'
+import { Helmet } from 'react-helmet'
 
 export default function MediaPage({token, ...props}) {
+    const TITLE = 'Media Page'
     const [feeds, setFeedsData] = useState([])
     //use useRef to store the latest value of the prop without firing the effect
     const tokenProp = useRef(token);
@@ -27,17 +28,19 @@ export default function MediaPage({token, ...props}) {
         
         // manually call the fecth function 
         fetchInstagramPost();
-        console.log(token)
         
   
         return () => {
             // cancel pending fetch request on component unmount
             abortController.abort(); 
         };
-    }, [props.limit])
+    }, [])
 
     return (
         <div className="container">
+            <Helmet>
+                <title>{ TITLE }</title>
+            </Helmet>
             {feeds.map((feed) => (
                 <Feed key={feed.id} feed={feed} />
             ))}

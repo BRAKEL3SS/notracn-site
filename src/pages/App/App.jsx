@@ -1,26 +1,31 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
 import AuthPage from '../Auth/AuthPage';
 import TeamPage from '../Team/TeamPage';
 import MediaPage from '../Media/MediaPage';
 import ContactPage from '../Contact/ContactPage';
-import Navbar from '../../components/Navbar/Navbar';
+import AboutPage from '../About/AboutPage';
 import './App.css';
 import ReportPage from '../Reports/ReportsPage';
+import Header from '../../components/Header/Header';
 
 export default function App() {
   const [user, setUser] = useState({name: 'admin'})
   return (
     <main className='App'>
       <>
-        <Navbar user={ user } setUser={setUser} />
+        <Header user={ user } setUser={setUser} />
+        <img style={{height:100, marginTop:50}} src="https://i.imgur.com/AVrKR3w.jpg" alt="team pic plz replace" />
       <Routes>
-        <Route path="/team" element={<TeamPage prop="prop"/>}/>
-        <Route path="/media" element={<MediaPage token={'IGQVJVSVBFMjB1VWw4T1pEd3ZAhQXRCMTFBQ3JKYWQ5czN0aEl0M2ViQ004emVrN2lscjRyX1FLTjdKWXRMSUFfMWJPSVg4LXpKVHN2b2JLeTRBMmh6eTFXTUh0Y1hNN0FUX1lZATVI1czV4ZA1J5a21QSQZDZD'} limit={12} />} />
-        <Route path="/contact-us" element={<ContactPage />} />
-        <Route path="/add-rider" element={<AuthPage />} />
-        <Route path="/reports" element={<ReportPage />} />
+          <Route exact path='/'
+            element={<Navigate to="/about" replace />}/>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/team" element={<TeamPage prop="prop"/>}/>
+          <Route path="/media" element={<MediaPage token={'IGQVJVSVBFMjB1VWw4T1pEd3ZAhQXRCMTFBQ3JKYWQ5czN0aEl0M2ViQ004emVrN2lscjRyX1FLTjdKWXRMSUFfMWJPSVg4LXpKVHN2b2JLeTRBMmh6eTFXTUh0Y1hNN0FUX1lZATVI1czV4ZA1J5a21QSQZDZD'} limit={12} />} />
+          <Route path="/contact-us" element={<ContactPage />} />
+          <Route path="/add-rider" element={<AuthPage />} />
+          <Route path="/reports" element={<ReportPage />} />
       </Routes>
       </>
 
