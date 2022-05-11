@@ -40,6 +40,7 @@ export default function Feed(props) {
     return (
         <>
             {post}
+            <p style={{textOverflow: 'ellipsis', overflow: 'hidden', height: 200 }}>{caption}</p>
         </>
     );
 }
