@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Feed from '../../components/Feed/Feed'
 import { Helmet } from 'react-helmet'
@@ -7,12 +7,8 @@ import { ImageList, Typography } from '@mui/material'
 export default function MediaPage({token, ...props}) {
     const TITLE = 'Media Page'
     const [feeds, setFeedsData] = useState([])
-    //use useRef to store the latest value of the prop without firing the effect
-    const tokenProp = useRef(token);
-    tokenProp.current = token;
 
     useEffect(() => {
-        // this is to avoid memory leaks
         const abortController = new AbortController();
 
         async function fetchInstagramPost () {
@@ -27,12 +23,10 @@ export default function MediaPage({token, ...props}) {
           }
         }
         
-        // manually call the fecth function 
         fetchInstagramPost();
         
   
         return () => {
-            // cancel pending fetch request on component unmount
             abortController.abort(); 
         };
     }, [])

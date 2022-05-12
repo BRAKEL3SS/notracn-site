@@ -1,4 +1,4 @@
-import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, IconButton } from "@mui/material"
+import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, IconButton, Divider } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react"
@@ -17,7 +17,7 @@ export default function DrawerComp({ user }) {
 
     useEffect(function() {
         checkAdmin()
-    }, [])
+    }, [user])
 
     return(
         <>
@@ -31,6 +31,7 @@ export default function DrawerComp({ user }) {
                         </ListItemText>
                     </ListItemIcon>
                 </ListItemButton>
+                <Divider />
                 <ListItemButton onClick={()=>setOpenDrawer(false)} to='/team' component={Link}>
                     <ListItemIcon>
                         <ListItemText>
@@ -38,6 +39,7 @@ export default function DrawerComp({ user }) {
                         </ListItemText>
                     </ListItemIcon>
                 </ListItemButton>
+                <Divider />
                 <ListItemButton onClick={()=>setOpenDrawer(false)} to='/media' component={Link}>
                     <ListItemIcon>
                         <ListItemText>
@@ -45,6 +47,7 @@ export default function DrawerComp({ user }) {
                         </ListItemText>
                     </ListItemIcon>
                 </ListItemButton>
+                <Divider />
                 <ListItemButton onClick={()=>setOpenDrawer(false)} to='/reports' component={Link}>
                     <ListItemIcon>
                         <ListItemText>
@@ -52,6 +55,7 @@ export default function DrawerComp({ user }) {
                         </ListItemText>
                     </ListItemIcon>
                 </ListItemButton>
+                <Divider />
                 <ListItemButton onClick={()=>setOpenDrawer(false)} to='/contact-us' component={Link}>
                     <ListItemIcon>
                         <ListItemText>
@@ -59,6 +63,7 @@ export default function DrawerComp({ user }) {
                         </ListItemText>
                     </ListItemIcon>
                 </ListItemButton>
+                <Divider />
                 { isAdmin ?
                 <ListItemButton onClick={()=>setOpenDrawer(false)} to='/add-rider' component={Link}>
                     <ListItemIcon>

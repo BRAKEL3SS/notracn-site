@@ -1,3 +1,5 @@
+import { Card } from "@mui/material";
+
 export default function Feed(props) {
     const { id, caption, media_type, media_url} = props.feed
     let post;

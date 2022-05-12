@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt')
 // 6 is a reasonable value
 const SALT_ROUNDS = 6
 
+
 const userSchema = new Schema({
     name: {type: String, required: true},
     email: {type: String, unique: true, trim: true, lowercase: true, required: true},
@@ -27,5 +28,7 @@ userSchema.pre('save', async function(next) {
     this.password = await bcrypt.hash(this.password, SALT_ROUNDS)
     return next()
 })
+
+
 
 module.exports  = mongoose.model('User', userSchema)
