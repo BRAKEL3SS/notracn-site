@@ -11,14 +11,14 @@ export default function ReportPage({ user }) {
     const TITLE = 'Race Reports'
     const { register, handleSubmit, reset, formState: {  error } } = useForm()
 
+    async function getReports() {
+        const reportsData = await reportsAPI.getAll()
+        setReports(reportsData)
+    }
+
     
     useEffect(() => {
         const abortController = new AbortController();
-        
-        async function getReports() {
-            const reportsData = await reportsAPI.getAll()
-            setReports(reportsData)
-        }
         
         getReports();
         
@@ -30,7 +30,9 @@ export default function ReportPage({ user }) {
 
     const onSubmit = (formData) => {
         reportsAPI.create(formData)
+        getReports()
         reset({report: ''})
+    
     }
 
 
