@@ -5,6 +5,6 @@ const reportsCtrl =  require('../../controllers/api/reports')
 
 // Post api/users
 router.post('/', reportsCtrl.create)
-router.post('/index', reportsCtrl.index)
+router.get('/index', reportsCtrl.index)
 
 module.exports = router

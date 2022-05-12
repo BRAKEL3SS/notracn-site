@@ -7,7 +7,6 @@ module.exports = {
 async function create(req, res) {
     try {
         const report = await Report.create(req.body)
-        console.log(report)
         res.json(report)
     } catch(err) {
         console.log(err)
@@ -16,7 +15,13 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-    const reports = await Report.find({})
-    reports.sort((a,b) => a.timestamp.sortOrder - b.timestamp.sortOrder)
-    res.json(reports)
+    try {
+        const reports = await Report.find({})
+        reports.sort((a,b) => b.createdAt - a.createdAt)
+        console.log(reports.slice(0,3))
+        res.json(reports.slice(0,3))
+    } catch(err) {
+        console.log(err)
+        res.status(400).json(err) 
+    }
 }

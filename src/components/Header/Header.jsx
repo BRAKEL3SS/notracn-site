@@ -18,10 +18,12 @@ export default function Header({user, setUser}) {
     const [isAdmin, setIsAdmin] = useState()
 
     function checkAdmin () {
-        if (user.name == 'admin') {
-            setIsAdmin(true)
-        } else {
-            setIsAdmin(false)
+        if (user !=null) {
+            if (user.name == 'admin') {
+                setIsAdmin(true)
+            } else {
+                setIsAdmin(false)
+            }
         }
     }
 
