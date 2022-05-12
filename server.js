@@ -25,6 +25,7 @@ app.use(require('./config/checkToken'))
 //Put API routes here, before the "catch all"
 app.use('/send', require('./routes/mail/mail.js'))
 app.use('/api/users', require('./routes/api/users'))
+app.use('/api/reports', require('./routes/api/reports'))
 //THe followign catch all route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get('/*', function(req, res) {
