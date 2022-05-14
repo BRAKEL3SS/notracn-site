@@ -15,7 +15,7 @@ export default function TeamPage() {
         <Typography sx={{marginRight: 80}} variant='h4'>
             Ron Knott <img style={{height:100, display:'inline-flex'}} src="https://i.imgur.com/AVrKR3w.jpg" alt="team pic plz replace" />
         </Typography>
-        <Paper elevation={3}>
+        <Paper elevation={3} sx={{margin: .75, background: 'grey'}}>
             Class: 50+ A <br />
             Bike: 2022.5 Husqvarna FC450 Rockstar Edition<br />
             Number: M649 <br />
@@ -25,7 +25,7 @@ export default function TeamPage() {
         <Typography sx={{marginRight: 80}} variant='h4'>
             Ryan Knott
         </Typography>
-        <Paper elevation={3}>
+        <Paper sx={{margin: .75, background: 'grey'}} elevation={3}>
             Classes: 450 B, 25+ B <br />
             Bike: 2022 Husqvarna FC350<br />
             Number: H124 <br />
@@ -36,7 +36,7 @@ export default function TeamPage() {
         <Typography sx={{marginRight: 80}} variant='h4'>
             Phillip Hauser
         </Typography>
-        <Paper elevation={3}>
+        <Paper sx={{margin: .75, background: 'grey'}} elevation={3}>
             Classes: 250 A, 2-Stroke A <br />
             Bike: 2022 Husqvarna TC250<br />
             Number: X182 <br />

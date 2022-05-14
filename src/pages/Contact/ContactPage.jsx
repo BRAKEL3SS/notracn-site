@@ -8,7 +8,6 @@ export default function ContactPage() {
     const TITLE = 'Contact-us'
     const { register, handleSubmit, reset, formState: {  error } } = useForm()
     const onSubmit = (formData) => {
-        console.log(formData)
 
         axios({
             method: "POST",

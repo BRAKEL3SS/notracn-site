@@ -9,6 +9,7 @@ import AboutPage from '../About/AboutPage';
 import './App.css';
 import ReportPage from '../Reports/ReportsPage';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/add-rider" element={<AuthPage />} />
           <Route path="/reports" element={<ReportPage user={ user } />} />
       </Routes>
+      <Footer />
       </>
 
     </main>
