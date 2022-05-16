@@ -14,9 +14,16 @@ This app was a mix of  a passion porject and a final project at General Assembly
 8. GitHub
 
 ## Getting started
-Use the following links to access my page
+Use the following links to access my page <br>
+https://notracn.herokuapp.com/ 
+
+Use the following link to access my trello board <br>
+https://trello.com/b/3rHa6ZxR/notracn-site
 
 ## Next steps
 The biggest improvements that I will add to this project will be visual/design enhancements. I feel like design is my weak point when it comes to building websites and plan to use this site to improve those skills
 
 ## Screenshots
+<img src='./images/notracn-site.png' alt="about page">
+<img src='./images/notracn-site1.png' alt="media page">
+<img src='./images/notracn-site2.png' alt="team page">
