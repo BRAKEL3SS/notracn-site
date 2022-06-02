@@ -19,7 +19,7 @@ export default function Header({user, setUser}) {
 
     function checkAdmin () {
         if (user !=null) {
-            if (user.name == 'admin') {
+            if (user.name === 'admin') {
                 setIsAdmin(true)
             } else {
                 setIsAdmin(false)
@@ -33,20 +33,17 @@ export default function Header({user, setUser}) {
 
     return(
         <>
-            <AppBar sx={{background: 'red' }}>
+            <AppBar sx={{background: '#F32424' }}>
                 <Toolbar>
 
                 {isMatch ? (
                 <>
-                <Typography>
-                    Notracn
-                </Typography>
+                <img src="https://i.imgur.com/Znmt5Rd.png" style={{height:60}} alt="notracn" />
+
                 <Drawer user={user} />
                 </>) : (     
                     <>
-                <Typography>
-                    Notracn
-                </Typography>           
+                <img src="https://i.imgur.com/Znmt5Rd.png" style={{height:100}} alt="notracn" />          
                 <Tabs sx={{marginLeft: 'auto'}} textColor="inherit" value={picked} onChange={(e, value)=> setPicked(value)} indicatorColor='secondary'>
                     <Tab label="About Us" to='/' component={Link} />
                     <Tab label="Team Riders" to='/team' component={Link} />
@@ -66,7 +63,7 @@ export default function Header({user, setUser}) {
                 { user ?
                             <Button onClick={handleLogOut} variant="contained" to='' component={Link}>Log Out</Button>
                             :
-                            <Button variant="contained" to='/add-rider' component={Link}>Sign-In</Button>
+                            <Button  color="secondary" variant="outlined" to='/add-rider' component={Link}>Sign-In</Button>
 
                             }
                 {/* <Button variant="contained">Login</Button>

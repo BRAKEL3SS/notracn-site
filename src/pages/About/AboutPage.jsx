@@ -8,7 +8,7 @@ export default function AboutPage() {
         <Helmet>
             <title>{ TITLE }</title>
         </Helmet>
-        <Box sx={{background: 'grey',
+        <Box sx={{background: '#DDDDDD',
     height: '25vh',
     display: 'flex',
     flexDirection: 'column',

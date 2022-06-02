@@ -9,7 +9,7 @@ export default function DrawerComp({ user }) {
 
     function checkAdmin () {
         if (user !=null) {
-            if (user.name == 'admin') {
+            if (user.name === 'admin') {
                 setIsAdmin(true)
             } else {
                 setIsAdmin(false)

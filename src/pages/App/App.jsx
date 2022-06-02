@@ -6,19 +6,24 @@ import TeamPage from '../Team/TeamPage';
 import MediaPage from '../Media/MediaPage';
 import ContactPage from '../Contact/ContactPage';
 import AboutPage from '../About/AboutPage';
-import './App.css';
 import ReportPage from '../Reports/ReportsPage';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import theme from "assets/theme";
+
 
 export default function App() {
   const [user, setUser] = useState(getUser())
   const key = process.env.REACT_APP_INSTA_TOKEN
   return (
+    <ThemeProvider theme={theme}>
+    <CssBaseline />
     <main className='App'>
       <>
         <Header user={ user } setUser={setUser} />
-        <img style={{height:100, marginTop:50}} src="https://i.imgur.com/AVrKR3w.jpg" alt="team pic plz replace" />
+        <img style={{height:200, marginTop:50, width: '100vw', objectFit:'cover', paddingBottom:0, marginBottom:-5}} src="https://i.imgur.com/NBq93jh.jpg" alt="team pic header" />
       <Routes>
           <Route exact path='/'
             element={<Navigate to="/about" replace />}/>
@@ -33,6 +38,7 @@ export default function App() {
       </>
 
     </main>
+    </ThemeProvider>
   );
 }
 
